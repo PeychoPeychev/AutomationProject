@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="3" verbose="1" name="AutomationProject"
+       annotations="JDK" parallel="tests">
+
+    <test name="LoginSuitePOM">
+        <classes>
+            <class name="saurce.demo.test.successfulLoginPOM"/>
+        </classes>
+    </test>
+    <test name="addProductPOM">
+        <classes>
+            <class name="saurce.demo.test.addProductPOM"/>
+        </classes>
+    </test>
+    <test name="CheckoutSuitePOM">
+        <classes>
+            <class name="saurce.demo.test.checkOutPOM"/>
+        </classes>
+    </test>
+</suite>
