@@ -4,10 +4,10 @@ import base.TestUtil;
 import org.testng.annotations.Test;
 import pages.*;
 
-public class checkOutPOM extends TestUtil {
+public class checkoutPOM extends TestUtil {
 
     @Test
-    public void checkOutInformation(){
+    public void checkoutInformation(){
         LoginPage loginPage = new LoginPage(driver);
         ProductPage productPage = loginPage.login("standard_user", "secret_sauce");
         productPage.addItemToTheCart("backpack");

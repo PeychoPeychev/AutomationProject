@@ -3,6 +3,8 @@ package saurce.demo.test;
 import base.TestUtil;
 import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -10,6 +12,7 @@ import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.ProductPage;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,13 +22,11 @@ import java.util.List;
 
 public class successfulLoginPOM extends TestUtil {
     @Test(dataProvider = "correctUsers")
-    public void succesfulLoginSauce(String userName, String password) {
+    public void succesfulLogin(String userName, String password) {
         LoginPage loginPage = new LoginPage(driver);
-        FluentWait fluentWait = new FluentWait(driver)
-                .withTimeout(Duration.ofSeconds(5))
-                .pollingEvery(Duration.ofSeconds(5))
-                .ignoreAll(Collections.singleton(NoSuchFieldError.class));
-         }
+        ProductPage productPage = loginPage.login(userName, password);
+        productPage.findMenu();
+    }
 
     @DataProvider(name = "correctUsers")
     public static Object[][] readUsersFromCsv() {

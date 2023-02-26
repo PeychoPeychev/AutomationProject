@@ -20,4 +20,5 @@ public class CartCheckoutPage extends BasePage{
         WebElement goTocheckout = driver.findElement(By.id("checkout"));
         goTocheckout.click();
     }
+
 }

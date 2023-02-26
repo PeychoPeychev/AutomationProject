@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.*;
 
-public class unsuccesfulCheckOutPOM extends TestUtil {
+public class unsuccesfulCheckoutPOM extends TestUtil {
     @Test
     public void checkOutInformation(){
         LoginPage loginPage = new LoginPage(driver);

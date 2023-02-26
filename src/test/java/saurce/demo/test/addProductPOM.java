@@ -18,7 +18,7 @@ public class addProductPOM extends TestUtil {
     @Test
     public void addItemToTheCart(){
         LoginPage loginPage = new LoginPage(driver);
-        ProductPage productPage = loginPage.login("problem_user", "secret_sauce");
+        ProductPage productPage = loginPage.login("standard_user", "secret_sauce");
         productPage.addItemToTheCart("backpack");
         productPage.addItemToTheCart("bike-light");
 

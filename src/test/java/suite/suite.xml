@@ -15,7 +15,7 @@
     </test>
     <test name="CheckoutSuitePOM">
         <classes>
-            <class name="saurce.demo.test.checkOutPOM"/>
+            <class name="saurce.demo.test.checkoutPOM"/>
         </classes>
     </test>
 </suite>
