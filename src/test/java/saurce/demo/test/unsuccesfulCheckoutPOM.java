@@ -19,8 +19,7 @@ public class unsuccesfulCheckoutPOM extends TestUtil {
         cartCheckoutPage.goToCheckoutInformation();
         ProfilInformationPage profilInformationPage = new ProfilInformationPage(driver);
         CheckoutOverviewPage checkoutOverviewPage = profilInformationPage.userInfromation("Peycho","Peycho","1111");
+        profilInformationPage.unsuccesfulCheckout();
 
-        WebElement errorMessage = driver.findElement(By.cssSelector("h3[data-test='error']"));
-        Assert.assertEquals(errorMessage.getText(),"Error: Last Name is required");
     }
 }

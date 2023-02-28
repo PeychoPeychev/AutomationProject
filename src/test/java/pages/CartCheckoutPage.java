@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CartCheckoutPage extends BasePage{
 
-    @FindBy(id = "checkout")
-    WebElement checkout;
+    @FindBy(css = "[data-test='checkout']")
+    WebElement goTocheckout;
 
     public CartCheckoutPage(WebDriver driver){
         super(driver);
@@ -17,7 +17,6 @@ public class CartCheckoutPage extends BasePage{
     }
 
     public void goToCheckoutInformation(){
-        WebElement goTocheckout = driver.findElement(By.id("checkout"));
         goTocheckout.click();
     }
 

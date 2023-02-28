@@ -18,5 +18,7 @@ public class checkoutPOM extends TestUtil {
         ProfilInformationPage profilInformationPage = new ProfilInformationPage(driver);
         CheckoutOverviewPage checkoutOverviewPage = profilInformationPage.userInfromation("Peycho","Peycho","1111");
         checkoutOverviewPage.finishCheckout();
+        CompletePage completePage = new CompletePage(driver);
+        completePage.succesfulCheckoutComplete();
     }
 }

@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class LoginPage extends BasePage{
 
@@ -15,6 +16,9 @@ public class LoginPage extends BasePage{
 
     @FindBy(id = "login-button")
     private WebElement loginBtn;
+
+    @FindBy(css = "h3[data-test='error']")
+    WebElement errorMessage;
 
     public LoginPage(WebDriver driver){
         super(driver);
@@ -34,4 +38,10 @@ public class LoginPage extends BasePage{
 
         return new ProductPage(driver);
     }
+    public void unsuccesfulMessage(){
+        errorMessage.getText();
+        Assert.assertEquals(errorMessage.getText(),
+                "Epic sadface: Username and password do not match any user in this service");
+    }
+
 }

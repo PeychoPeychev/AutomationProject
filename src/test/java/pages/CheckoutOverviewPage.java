@@ -16,8 +16,7 @@ public class CheckoutOverviewPage extends BasePage{
     }
 
     public void finishCheckout(){
-        WebElement goToPay = driver.findElement(By.id("finish"));
-        goToPay.click();
+        finishbtn.click();
     }
 
 }

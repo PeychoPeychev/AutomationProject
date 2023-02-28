@@ -6,6 +6,7 @@ import com.opencsv.exceptions.CsvException;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.LoginPage;
+import pages.ProductPage;
 
 import java.io.FileReader;
 import java.io.IOException;
@@ -15,6 +16,8 @@ public class unSuccrsfulLoginPOM extends TestUtil {
     @Test(dataProvider = "wrongUsers")
     public void unSuccesfulLogin(String userName, String password) {
         LoginPage loginPage = new LoginPage(driver);
+        ProductPage productPage = loginPage.login(userName, password);
+        loginPage.unsuccesfulMessage();
     }
 
     @DataProvider(name = "wrongUsers")

@@ -1,9 +1,11 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 public class ProfilInformationPage extends BasePage {
 
@@ -18,6 +20,8 @@ public class ProfilInformationPage extends BasePage {
 
     @FindBy(id = "continue")
     WebElement checkOutBtn;
+    @FindBy(css = "h3[data-test='error']")
+    WebElement errorMessage;
 
     public ProfilInformationPage(WebDriver driver) {
         super(driver);
@@ -40,5 +44,10 @@ public class ProfilInformationPage extends BasePage {
         checkOutBtn.click();
 
         return new CheckoutOverviewPage(driver);
+    }
+
+    public void unsuccesfulCheckout(){
+        errorMessage.getText();
+        Assert.assertEquals(errorMessage.getText(),"Error: Last Name is required");
     }
 }
